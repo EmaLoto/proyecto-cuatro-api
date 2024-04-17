@@ -1,6 +1,7 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 
-const linkConection = 'mongodb+srv://velak:bkleb95@serverdb.iaj4ewt.mongodb.net/miDataBase?retryWrites=true&w=majority&appName=ServerDB'
+const linkConection = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@serverdb.iaj4ewt.mongodb.net/miDataBase?retryWrites=true&w=majority&appName=ServerDB`
 
 mongoose.connect(linkConection)
   .then(() => {
